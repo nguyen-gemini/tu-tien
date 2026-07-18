@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thần Thoại Hóa Nhật Ký - Thượng Cổ Pháp Bảo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PWA Setup -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d0b14">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Thần Ký Tu Tiên">
+    <link rel="apple-touch-icon" href="icon-192.jpg">
+</head>
+<body>
+    <div class="stars-overlay"></div>
+    <div class="radial-glow"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-decor">
+                <span class="decor-line"></span>
+                <span class="decor-rhombus"></span>
+                <span class="decor-line"></span>
+            </div>
+            <h1 class="glow-title">THƯỢNG CỔ PHÁP BẢO</h1>
+            <h2 class="sub-title">Luyện Hồn Ký</h2>
+            <p class="description">Biến đổi phàm nhân ký sự thành vạn cổ thần thông thư tịch</p>
+        </header>
+
+        <!-- API Key Configuration (Linh Thạch Kháng) -->
+        <section class="api-section glass-panel">
+            <div class="api-header" id="apiToggle">
+                <div class="status-indicator">
+                    <span class="dot pulse-red" id="statusDot"></span>
+                    <span class="status-text" id="statusText">Linh Lực Suy Kiệt (Chế độ Ngoại Tuyến)</span>
+                </div>
+                <button class="btn-toggle-api">Nạp Linh Thạch (Gemini API Key) <span class="arrow-icon">▼</span></button>
+            </div>
+            <div class="api-body collapsed" id="apiBody">
+                <p class="api-tip">Để trải nghiệm thần thông tối cao từ AI (dịch thông minh hơn), hãy nhập Gemini API Key của bạn. Key sẽ được lưu an toàn tại trình duyệt của bạn (localStorage).</p>
+                <div class="input-group">
+                    <input type="password" id="apiKeyInput" placeholder="Nhập Gemini API Key tại đây...">
+                    <button class="btn-primary" id="saveKeyBtn">Phong Ấn (Lưu)</button>
+                    <button class="btn-secondary" id="clearKeyBtn">Hủy Ấn (Xóa)</button>
+                </div>
+                <div class="api-link-note">Chưa có Key? Bạn có thể lấy miễn phí tại <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio</a>.</div>
+            </div>
+        </section>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <!-- Left: Input Pane -->
+            <section class="pane input-pane glass-panel">
+                <h3 class="pane-title">Phàm Nhân Nhật Ký</h3>
+                <div class="pane-content">
+                    <textarea id="mortalInput" placeholder="Hôm nay ta thức dậy trễ lúc 8 giờ sáng, vội vàng chạy đi làm thì kẹt xe nửa tiếng đồng hồ. Đến nơi bị sếp mắng mỏ thậm tệ trước mặt bao nhiêu đồng môn..."></textarea>
+                    
+                    <div class="templates-section">
+                        <span class="template-label">Chọn Sự Kiện Thử Nghiệm:</span>
+                        <div class="template-chips">
+                            <button class="chip" data-text="Hôm nay tôi ngủ dậy muộn, đi làm thì kẹt xe kinh khủng, lại còn bị sếp mắng vì đi trễ 10 phút. Thật là một ngày tồi tệ.">Trễ Giờ</button>
+                            <button class="chip" data-text="Mới sáng ra đã làm rơi vỡ cốc cà phê, dọn dẹp mỏi hết cả lưng, áo quần thì bẩn hết.">Đổ Cà Phê</button>
+                            <button class="chip" data-text="Buổi trưa rủ đồng nghiệp đi ăn bún chả, lúc thanh toán thì quán tính nhầm thêm 50k, cãi nhau một hồi mới được trả lại tiền.">Quán Ăn Nhầm Tiền</button>
+                            <button class="chip" data-text="Chiều nay code gặp một cái lỗi ngớ ngẩn tìm mãi không ra, hóa ra là thiếu dấu chấm phẩy làm mất cả buổi chiều mò mẫm.">Bug Code</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Center: Actions -->
+            <section class="action-section">
+                <button class="btn-refine" id="refineBtn">
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">KHỞI ĐỘNG TRẬN PHÁP</span>
+                </button>
+                
+                <div class="magic-circle-container" id="magicCircle">
+                    <svg class="magic-circle" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" stroke="var(--emerald-glow)" stroke-width="1" fill="none" stroke-dasharray="6,6" />
+                        <circle cx="50" cy="50" r="40" stroke="var(--gold-glow)" stroke-width="1.5" fill="none" />
+                        <circle cx="50" cy="50" r="35" stroke="var(--emerald-glow)" stroke-width="0.5" fill="none" stroke-dasharray="30,10" />
+                        <polygon points="50,15 80,70 20,70" stroke="var(--emerald-glow)" stroke-width="1" fill="none" />
+                        <polygon points="50,85 80,30 20,30" stroke="var(--emerald-glow)" stroke-width="1" fill="none" />
+                        <text x="50" y="52" font-size="8" fill="var(--gold-glow)" text-anchor="middle" font-family="Cinzel" id="circleStatus">QI</text>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Right: Output Pane -->
+            <section class="pane output-pane glass-panel">
+                <h3 class="pane-title">Thần Thông Hóa Cảnh</h3>
+                <div class="pane-content">
+                    <div class="output-container" id="immortalOutputContainer">
+                        <div class="output-placeholder" id="outputPlaceholder">
+                            Càn Khôn xoay chuyển, Linh Khí ngưng tụ...<br>
+                            Hãy nhập nhật ký bên trái và kích hoạt trận pháp để luyện hóa thần thông!
+                        </div>
+                        <div class="output-text hidden" id="immortalOutput"></div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-secondary" id="copyBtn" disabled>
+                            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" fill="currentColor"/></svg>
+                            Sao Chép Thần Thông
+                        </button>
+                        <button class="btn-secondary" id="shareBtn" disabled>
+                            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" fill="currentColor"/></svg>
+                            Truyền Tống Thần Ký
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>© Đạo Hữu Hội Quán - Thiết kế bởi Antigravity Pháp Bảo Các</p>
+        </footer>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast hidden" id="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
