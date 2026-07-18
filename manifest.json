@@ -1,0 +1,24 @@
+{
+  "name": "Thần Thoại Hóa Nhật Ký - Thượng Cổ Pháp Bảo",
+  "short_name": "Thần Ký Tu Tiên",
+  "description": "Biến đổi phàm nhân ký sự thành vạn cổ thần thông thư tịch.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#07050a",
+  "theme_color": "#0d0b14",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon-192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
